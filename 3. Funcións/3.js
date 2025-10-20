@@ -11,9 +11,22 @@ const persoas = [
 ];
 console.log("a)");
 let mayores = persoas.filter((persoa) => persoa.idade >= 18);
-console.log(mayores);
+console.table(mayores);
 console.log("\n");
 //////////////////////////////////////
 console.log("b)");
 let nombres = persoas.map((persoa) => persoa.nome);
 console.log(nombres);
+//////////////////////////////////////
+console.log("c)");
+let ma = persoas
+  .filter((persoa) => persoa.idade >= 18)
+  .map((persoa) => persoa.nome.toUpperCase());
+console.log(ma);
+//////////////////////////////////////
+console.log("d)");
+const obx2 = persoas.map((persoa) => ({ id: persoa.id, nome: persoa.nome }));
+console.table(obx2);
+console.log("\n");
+//////////////////////////////////////
+console.log("Exercicio 2");
