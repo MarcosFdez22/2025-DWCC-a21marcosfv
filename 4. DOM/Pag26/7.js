@@ -24,19 +24,19 @@ function createTree(data) {
 
   for (const e2 of Object.keys(data)) {
     let li = document.createElement("li");
-    li.textContent = e2
-    let data2 = data[e2];
-  
-    
-    if (data2 && Object.keys(data2).length === 0) {
+    li.append(e2)
+    let data2 = data[e2];    
+    if (Object.keys(data2).length === 0) {
         ul.append(li);
-    } else {
+  } else {
       const childTree = createTree(data2);
       li.append(childTree);
       ul.append(li);
-} 
+            } 
   }
+
   return ul;
+
 }
 
 document.body.append(createTree(arbore))
