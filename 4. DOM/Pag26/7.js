@@ -1,3 +1,5 @@
+"use strict"
+
 let arbore = {
   Fish: {
     trout: {},
@@ -22,11 +24,20 @@ function createTree(data) {
 
   for (const e2 of Object.keys(data)) {
     let li = document.createElement("li");
-    let data2 = Object.values(data);
-    li.append(e2);
-    ul.append(li);
-    console.log(data2 != null);
+    li.textContent = e2
+    let data2 = data[e2];
+  
+    
+    if (data2 && Object.keys(data2).length === 0) {
+        ul.append(li);
+    } else {
+      const childTree = createTree(data2);
+      li.append(childTree);
+      ul.append(li);
+} 
   }
-  body.append(ul);
+  return ul;
 }
-createTree(arbore);
+
+document.body.append(createTree(arbore))
+
