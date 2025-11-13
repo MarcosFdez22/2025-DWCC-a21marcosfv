@@ -5,4 +5,5 @@ boton.addEventListener("click", () => {
   const li = document.createElement("li");
   li.append(texto.value);
   ul.append(li);
+  texto.value = "";
 });
